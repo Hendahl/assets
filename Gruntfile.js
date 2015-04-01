@@ -1,6 +1,6 @@
 /**
  * Grunt settings
- * @author  lars.hendahl@diglias.com
+ * @author  lars.hendahl
  */
 module.exports = function (grunt) {
 
@@ -14,6 +14,7 @@ module.exports = function (grunt) {
   //grunt.task.run('notify_hooks');
 
   grunt.registerTask("image", ["imagemin"]);
+  grunt.registerTask("jsclean", ["jsbeautifier"]);
   grunt.registerTask("svg", ["dr-svg-sprites","less:mock"]);
   grunt.registerTask("sortjson", ["sortJSON"]);
   grunt.registerTask("copyfonts", ["newer:copy:fonts"]);

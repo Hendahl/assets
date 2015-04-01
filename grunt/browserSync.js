@@ -1,6 +1,6 @@
  /**
  * Grunt.js init config for module grunt-browser-sync browserSync
- * @author  Lars Hendahl
+ * @author  lars.hendahl@cygni.se
  */
 
 module.exports = {

@@ -29,6 +29,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-dr-svg-sprites": "^0.9.15",
     "grunt-html-validation": "^0.1.18",
+    "grunt-jsbeautifier": "^0.2.10",
     "grunt-lesslint": "^1.1.14",
     "grunt-newer": "^1.1.0",
     "grunt-notify": "^0.4.1",
