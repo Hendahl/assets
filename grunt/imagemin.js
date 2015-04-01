@@ -1,3 +1,6 @@
+/*
+* @author  lars.hendahl@cygni.se
+*/
  module.exports = {
     static: {                         
         options: {                       
@@ -6,10 +9,10 @@
           //use: [mozjpeg()]
         },
          files: [{
-        expand: true,                  // Enable dynamic expansion
-        cwd: 'src/images',                   // Src matches are relative to this path
-        src: ['**/*.svg'],   // Actual patterns to match
-        dest: 'dist/'                  // Destination path prefix
+        expand: true,                 
+        cwd: 'src/images',                   
+        src: ['**/*.svg'],   /
+        dest: 'dist/'                  
       }]
     }
 }

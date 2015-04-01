@@ -1,7 +1,7 @@
-  /**
-   * Grunt.js init config for module grunt-compile-handlebars
-   * @author  Lars Hendahl
-   */
+/**
+* Grunt.js init config for module grunt-compile-handlebars
+* @author  lars.hendahl@cygni.se
+*/
 module.exports = {
   pagehead_en: {
           preHTML: 'src/handlebars/fixtures/pageHeadPre.html',

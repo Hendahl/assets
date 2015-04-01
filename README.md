@@ -1,2 +1,2 @@
-# assets
+# Assets
 Frontend assets files

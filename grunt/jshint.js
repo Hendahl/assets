@@ -1,8 +1,7 @@
 /*
- * Grunt.js init config for module grunt-contrib jshint
- * @author  Lars Hendahl¨
- * @contributor swapna.s.biswal@ericsson.com
- */
+* @author  lars.hendahl@cygni.se
+*/
+
 module.exports = {
 	all : ["src/js/lib/*.js", "src/js/widgets/*.js", "GruntFile.js", "src/js/grunt/*.js"],
 	options : {

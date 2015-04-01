@@ -1,3 +1,6 @@
+/*
+* @author  lars.hendahl@cygni.se
+*/
 
 module.exports = {
 	options: {
