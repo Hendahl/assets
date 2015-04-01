@@ -1,0 +1,60 @@
+/**
+ * eAvtal 1.0 Reset Stylesheet
+ * author lars.hendahl@diglias.com,
+ */
+ 
+table.eTable{
+	background-color: @eBaseColorWhite1;
+    border-bottom: 1px solid @eBaseColorGrey1;
+    border-collapse: separate;
+    border-left: 1px solid @eBaseColorGrey1;
+    empty-cells: show;
+    width: 100%;
+	caption{
+		text-align:left;
+	}
+	thead{
+       tr th {
+		    .eMixinGradientHorizontalWithStop(@eBaseColorGrey1 , 0,#CCC, 1,#EEE);
+		    border-top: 1px solid @eBaseColorGrey1;
+	   }
+	   tr th:last-child { border-right: 1px solid @eBaseColorGrey1; }
+	}
+	tbody{
+	    tr.eHighlight { background-color: @eBaseColorRed1; }
+        tr.eOdd { background-color: @eBaseColorWhite1; }
+        tr.eEven { background-color: @eBaseColorGrey1 }
+	}
+	tfoot{
+	   td{
+	      background-color: @eBaseColorGrey1;
+	   }
+	}
+	th, td{
+		border-right: 1px solid @eBaseColorGrey1;
+	    border-top: 1px solid @eBaseColorGrey1;
+	    padding: 10px;
+	}
+	> *:first-child tr:first-child th:first-child {
+        border-top-left-radius: 5px;
+    }
+    > *:first-child tr:first-child th:last-child{ 
+        border-top-right-radius: 5px;
+    }
+	> *:last-child tr:last-child td:last-child {
+	    border-bottom-right-radius: 5px;
+	}
+	> *:last-child tr:last-child td:first-child {
+	    border-bottom-left-radius: 5px;
+	}
+	&.eZebraRows{
+		tbody{
+		    tr:nth-child(even) { background-color: @eBaseColorGrey1 }
+		    tr:nth-child(odd) { background-color:  @eBaseColorWhite1 }
+	    }
+	    
+	}
+}
+
+
+

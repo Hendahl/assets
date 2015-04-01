@@ -1,0 +1,84 @@
+/**
+ * @author  Lars Hendahl
+ */
+ 
+
+/* URL ***********************************************/
+
+@eBaseImageUrl: ~"../images/";
+@eBaseSpritesUrl: ~"../images/sprites/";
+@eBaseFontsUrl: ~"../fonts/";
+
+/* GRID ***************************************************************/
+@eColumnWidth: 80px;
+@eGutterWidth: 20px;
+@eNumberOfColumns: 12;
+@eAllColumnsWidth: @eColumnWidth * @eNumberOfColumns; 
+@eAllGuttersWidth: @eGutterWidth * (@eNumberOfColumns - 1); 
+@eTotalWidth: (@eAllColumnsWidth + @eAllGuttersWidth); 
+
+
+/* CONTAINERS **********************************************************/
+
+@eMainInnerMaxWidth: (@eTotalWidth + 20); //1180px 10x2 is wrapper padding 
+ 
+/* GAPS ***************************************************************/
+ 
+@eBaseGap: 1rem;
+
+/* FONT ***************************************************************/
+
+@font-face {
+    font-family: 'Afton_James';
+    src: url('@{eBaseFontsUrl}Afton_James.eot');
+    src: url('@{eBaseFontsUrl}Afton_James.eot?#iefix') format('embedded-opentype'),
+         url('@{eBaseFontsUrl}Afton_James.woff') format('woff'),
+         url('@{eBaseFontsUrl}Afton_James.ttf') format('truetype'),
+         url('@{eBaseFontsUrl}Afton_James.svg#eAvtal_capital_ttregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+
+ 
+@eBaseFont1: "Open Sans",Helvetica,Arial,sans-serif;
+@eBaseFont2: 'Afton_James', Arial,sans-serif;
+
+@eBaseFontSizeDesktop:16px;
+@eBaseFontSizeTabletlandscape:15px;
+@eBaseFontSizeTabletportraitandsmaller:15px;
+@eBaseFontSizeTabletportrait:14px;
+@eBaseFontSizeSmartphonelandscapeandsmaller:13px;
+@eBaseFontSizeSmartphoneportrait:12px;
+
+@eBaseLineHeight:1.48;
+@eBaseFontWeight: 400;
+
+/* COLOURS ************************************************************/
+@eBaseColorWhite1: #FFFFFF;
+@eBaseColorBlack1: #000;
+@eBaseColorGrey1: #4A4A4A;
+@eBaseColorGrey2: #858585;
+@eBaseColorGrey3: #A6A6A6;
+@eBaseColorGrey4: #E3E3E3;
+@eBaseColorRed1: #E86262;
+@eBaseColorGreen1: #4DA370;
+@eBaseColorBlue1: #4A90E2;
+@eBaseColorOrange1: #F5A623;
+
+
+/* FLOATING WIDTHS **************************************************************/
+
+@eWidth12 : 12.50%;
+@eWidth14 : 14.28%; 
+@eWidth16 : 16.66%;
+@eWidth20 : 20%; 
+@eWidth25 : 25%;
+@eWidth33 : 33.33%;
+@eWidth40 : 40%;
+@eWidth50 : 50%;
+@eWidth55 : 55%; 
+@eWidth60  : 60%;
+@eWidth100 : 100%;
+
+

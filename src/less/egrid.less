@@ -1,0 +1,60 @@
+/**
+ * @author  Lars Hendahl
+ */
+ 
+/* GLOBAL ***************************************************************/
+body, html {
+	height: 100%;
+	text-align: center;
+}
+/* WRAPPERS **************************************************************/
+.eOW {
+	float: left;
+	width: 100%;
+}
+.eIW {
+	clear: both;
+	height: 100%;
+	margin: 0 auto;
+	max-width: @eMainInnerMaxWidth;
+	text-align: left;
+	padding: @eBaseGap 10px;
+}
+/* GRID ***************************************************************/
+.eRow {
+	clear: both;
+	display: block;
+	.eMixinClearFix();
+}
+
+[class^="eGCol"],
+[class*=" eGCol"] {
+	float: left;
+	margin-right: -100%;
+}
+.eGCol1{ .eMixineGCol( 1, 0) }
+.eGCol2{ .eMixineGCol( 2, 1) }
+.eGCol3{ .eMixineGCol( 3, 2) }
+.eGCol4{ .eMixineGCol( 4, 3) }
+.eGCol5{ .eMixineGCol( 5, 4) }
+.eGCol6{ .eMixineGCol( 6, 5) }
+.eGCol7{ .eMixineGCol( 7, 6) }
+.eGCol8{ .eMixineGCol( 8, 7) }
+.eGCol9{ .eMixineGCol( 9, 8) }
+.eGCol10{ .eMixineGCol( 10, 9) }
+.eGCol11{ .eMixineGCol( 11, 10) }
+.eGCol12{ .eMixineGCol( 12, 11) }
+
+.eGPush0  { .eMixineGPush(0) }
+.eGPush1  { .eMixineGPush(1) }
+.eGPush2  { .eMixineGPush(2) }
+.eGPush3  { .eMixineGPush(3) }
+.eGPush4  { .eMixineGPush(4) }
+.eGPush5  { .eMixineGPush(5) }
+.eGPush6  { .eMixineGPush(6) }
+.eGPush7  { .eMixineGPush(7) }
+.eGPush8  { .eMixineGPush(8) }
+.eGPush9  { .eMixineGPush(9) }
+.eGPush10 { .eMixineGPush(10) }
+.eGPush11 { .eMixineGPush(11) }
+

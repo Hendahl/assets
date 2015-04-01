@@ -1,0 +1,120 @@
+/**
+ * @author  Lars Hendahl
+ */
+ 
+
+html { font-size: @eBaseFontSizeDesktop}
+body { 
+	font-family: @eBaseFont1;
+	background-color: @eBaseColorWhite1;
+	color: @eBaseColorGrey1;
+}
+
+/* 1rem = 16px = .eMixinFont(1) */ 
+h1 { 
+	.eMixinFont(2.4 , 1.18);
+	font-family: @eBaseFont1;
+	.eMixinSmooth();
+}
+h2 { 
+	.eMixinFont(2, 1.18);
+	.eMixinSmooth();
+}
+h3 { 
+	.eMixinFont(1.6, 1.18);
+	.eMixinSmooth();
+}
+h4 { .eMixinFont(1.4, 1.18)} 
+h5 { .eMixinFont(1.2, 1.18)}
+h6 { .eMixinFont(1)}
+p, ul, ol, dl, dt, dd, li, input, label {  
+	.eMixinFont(1);
+	font-weight: @eBaseFontWeight;	
+	.eMixinSmooth();
+}
+
+figcaption, time {
+	color: @eBaseColorGrey1;
+}
+sup, sub {}
+blockquote {
+	p {font-weight: @eBaseFontWeight }
+}
+
+.eMain {
+	p, blockquote, table, article, aside, address, section, ul, ol, dl, figure, img {margin: @eBaseGap 0}
+	figure { 
+		img{margin-top:0}
+	}
+
+
+}
+
+/* LINKS ****************************************************/
+a {
+	color: @eBaseColorBlue1;
+	text-decoration: none;
+	outline: none;
+}
+a:active,a.active { color: @eBaseColorGrey1}
+a:hover { 
+	color:@eBaseColorBlue1;
+	text-decoration: none
+}
+a:active { text-decoration: none }
+
+/* NOSCRIPT *************************************************/
+noscript {
+	p { padding:@eBaseGap 0 }
+}
+/* CONTAINERS *************************************************/
+section.eOW {
+	margin:0;
+	background: url("@{eBaseImageUrl}ebg.png");
+}
+
+section.eHero {
+	.eCarousel {
+		position:relative;
+		ul {
+			width: 100%;
+			&.flex-direction-nav li {display:inline-block}
+			&.slides {
+				>li{
+					position: relative;
+					opacity: 0;
+				}
+			}
+			li {
+				  -webkit-background-size: cover;
+  				   -moz-background-size: cover;
+ 					 -o-background-size: cover;
+  				background-size: cover;
+				float:left;
+				width: 100%;
+				background-position: center top;
+				padding: 1rem 0;
+				overflow:hidden;
+				>div{
+					min-height:	@eBaseGap*20;
+				}
+				&.eRow{
+						clear:none !important;
+				}
+			}
+
+		}
+		.flex-control-nav {bottom: -15px}
+		.slides {
+			>li:first-child {display:block;}
+		}
+	}
+}
+
+
+
+
+
+
+
+

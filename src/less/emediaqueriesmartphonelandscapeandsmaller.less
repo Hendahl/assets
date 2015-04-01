@@ -1,0 +1,46 @@
+/**
+ * @author  Lars Hendahl
+ */
+ 
+@media only screen and (max-width: 480px) {
+
+
+	h1:after {
+    content: "Smart phone landscape and smaller";
+    }
+
+	html { font-size: @eBaseFontSizeSmartphonelandscapeandsmaller}
+	/* GRID ***************************************************************/
+
+	
+	.eRow.eBreak{
+		.eGCol2{
+			.eMixineGCol(6,5);
+			&.eGPush0, &.eGPush4, &.eGPush8 {
+				.eMixineGPush(0);
+				clear: left;
+			}
+			&.eGPush2, &.eGPush6, &.eGPush10 {
+				.eMixineGPush(6);
+				clear: none;
+			}
+		}
+		.eGCol3{
+		    .eMixineGCol(12,11);
+            &.eGPush0, &.eGPush6 {
+                 .eMixineGPush(0);
+                clear: left;
+            }
+            &.eGPush3, &.eGPush9 {
+                 .eMixineGPush(0);
+                 clear: left;
+            }
+		}
+        .eGCol4{
+           .eMixineGCol(12,11);
+	       .eMixineGPush(0);
+	       clear: left;
+	       float: none;
+        }
+	}
+}

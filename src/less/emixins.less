@@ -1,0 +1,235 @@
+/**
+ * @author  Lars Hendahl
+ */
+ 
+/* CLEAR POSITION *************************************************************/
+
+.eMixinClearFix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+/* GRID   **********************************************************************/
+/* The base grid is calculated from 12 columns 11 gutters, column width 54 px and
+/* gutter width 30px = total width of 978px                                    */
+
+.eMixineGCol(@eTheColumn: 1, @eTheGutter: 0){
+	@eTemp: percentage(((@eColumnWidth * @eTheColumn) + (@eGutterWidth * @eTheGutter)) / @eTotalWidth);
+	width: round(@eTemp, 2);
+}
+.eMixineGPush(@eThePush: 0){
+	@eTemp: percentage(((@eColumnWidth * @eThePush) + (@eGutterWidth * @eThePush)) / @eTotalWidth);
+	margin-left: round(@eTemp, 2);
+
+}
+
+/* FONT   **********************************************************************/
+	
+/*1rem = 16px lineheight 1.4 */
+/*38 1.18 */
+
+.eMixinFont(@fontSize:1, @lineHeight:1.4){
+    font-size: ~"@{fontSize}rem"; 
+    line-height: @lineHeight;
+}
+
+.eMixinSmooth(){
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* GRADIENTS *******************************************************************/
+
+.eMixinBorderGradient(@backgroundPosition:bottom, @backgroundHeight: 3px){
+	background: rgb(161,197,23); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ExYzUxNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iIzAwOTA0NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzAwODJiNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iIzE1MWY3NyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYjAwNGYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(left,  rgb(161,197,23) 0%, rgb(0,144,69) 25%, rgb(0,130,182) 50%, rgb(21,31,119) 75%, rgb(219,0,79) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(161,197,23)), color-stop(25%,rgb(0,144,69)), color-stop(50%,rgb(0,130,182)), color-stop(75%,rgb(21,31,119)), color-stop(100%,rgb(219,0,79))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgb(161,197,23) 0%,rgb(0,144,69) 25%,rgb(0,130,182) 50%,rgb(21,31,119) 75%,rgb(219,0,79) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgb(161,197,23) 0%,rgb(0,144,69) 25%,rgb(0,130,182) 50%,rgb(21,31,119) 75%,rgb(219,0,79) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgb(161,197,23) 0%,rgb(0,144,69) 25%,rgb(0,130,182) 50%,rgb(21,31,119) 75%,rgb(219,0,79) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgb(161,197,23) 0%,rgb(0,144,69) 25%,rgb(0,130,182) 50%,rgb(21,31,119) 75%,rgb(219,0,79) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1c517', endColorstr='#db004f',GradientType=1 ); /* IE6-8 */
+	background-position: @backgroundPosition;
+	background-repeat: no-repeat;
+	background-size: 100% @backgroundHeight;
+}
+.eMixinBlendGradient(@from: @eBaseColorBlack, @to: @eBaseColorWhite) {
+	background: @from; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(left,  @from 0%, @to 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,@from), color-stop(100%,@to)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  @from 0%,@to 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  @from 0%,@to 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  @from 0%,@to 100%); /* IE10+ */
+	background: linear-gradient(to right,  @from 0%, @to 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@from', endColorstr='@to',GradientType=1 ); /* IE6-8 */
+}
+
+.eMixinBorderRadius (@eRadius: 8px) {
+	-webkit-border-radius: @eRadius;
+	-moz-border-radius:    @eRadius;
+	border-radius:         @eRadius;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
+
+.eMixinBorderRadiuses (@eTopRight: @eBaseGap/3, @eBottomRight: @eBaseGap/3, @eBottomLeft: @eBaseGap/3, @eTopLeft: @eBaseGap/3) {
+	-webkit-border-top-right-radius:    @eTopRight;
+	-webkit-border-bottom-right-radius: @eBottomRight;
+	-webkit-border-bottom-left-radius:  @eBottomLeft;
+	-webkit-border-top-left-radius:     @eTopLeft;
+
+	-moz-border-radius-topright:        @eTopRight;
+	-moz-border-radius-bottomright:     @eBottomRight;
+	-moz-border-radius-bottomleft:      @eBottomLeft;
+	-moz-border-radius-topleft:         @eTopLeft;
+
+	border-top-right-radius:            @eTopRight;
+	border-bottom-right-radius:         @eBottomRight;
+	border-bottom-left-radius:          @eBottomLeft;
+	border-top-left-radius:             @eTopLeft;
+
+	-moz-background-clip:    padding; 
+	-webkit-background-clip: padding-box; 
+	background-clip:         padding-box; 
+}
+.eMixinGradientHorizontal (@eStartColor:@eBaseColorGrey3, @eEndColor: @eBaseColorWhite) {
+	background-color: @eStartColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@eStartColor), to(@eEndColor));
+	background: -webkit-linear-gradient(top, @eStartColor, @eEndColor);
+	background: -moz-linear-gradient(top, @eStartColor, @eEndColor);
+	background: -ms-linear-gradient(top, @eStartColor, @eEndColor);
+	background: -o-linear-gradient(top, @eStartColor, @eEndColor);
+}
+
+.eMixinGradientVertical (@eStartColor:@eBaseColorGrey3, @eEndColor: @eBaseColorWhite) {
+ 	background-color: @eStartColor;
+	background-image: -webkit-gradient(linear, left top, right top, from(@eStartColor), to(@eEndColor));
+	background-image: -webkit-linear-gradient(left, @eStartColor, @eEndColor);
+	background-image: -moz-linear-gradient(left, @eStartColor, @eEndColor);
+	background-image: -ms-linear-gradient(left, @eStartColor, @eEndColor);
+	background-image: -o-linear-gradient(left, @eStartColor, @eEndColor);
+}
+
+.eMixinGradientHorizontalWithImage (@eUrl, @eStartColor, @eEndColor) {
+	background-color: @eStartColor;
+	bacgkround-image: url(@eUrl);
+	background-image: url(@eUrl), -webkit-gradient(linear, left top, right top, from(@eStartColor), to(@eEndColor));
+	background-image: url(@eUrl), -webkit-linear-gradient(left, @eStartColor, @eEndColor);
+	background-image: url(@eUrl), -moz-linear-gradient(left, @eStartColor, @eEndColor);
+	background-image: url(@eUrl), -ms-linear-gradient(left, @eStartColor, @eEndColor);
+	background-image: url(@eUrl), -o-linear-gradient(left, @eStartColor, @eEndColor);
+}
+
+.eMixinGradientHorizontalWithStop (@eStartColor: @eBaseColorGrey3, @eStartStop, @eEndColor: @eBaseColorWhite, @eEndStop, @eIEColor: @eBaseColorWhite) {
+	background-color: @eIEColor;
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(@eStartStop, @eStartColor),color-stop(@eEndStop, @eEndColor));
+	background: -webkit-linear-gradient(top,@eStartColor percentage(@eStartStop), @eEndColor percentage(@eEndStop));
+	background: -moz-linear-gradient(top,@eStartColor percentage(@eStartStop), @eEndColor percentage(@eEndStop));
+	background: -o-linear-gradient(top,@eStartColor percentage(@eStartStop), @eEndColor percentage(@eEndStop));
+	background: linear-gradient(top,@eStartColor percentage(@eStartStop), @eEndColor percentage(@eEndStop));
+
+}
+
+/* SHADOWS  *******************************************************************/
+
+.eMixinBoxShadow (@string) {
+	-webkit-box-shadow: @string;
+	-moz-box-shadow:    @string;
+	box-shadow:         @string;
+}
+.eMixinDropShadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow:		@x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.eMixinInnerShadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow:    inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow:         inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+
+/* TRANSFORM ********************************************************************/
+
+.eMixinTransform (@string) {
+	-webkit-transform: @string;
+   -moz-transform: @string;
+    -ms-transform: @string;
+     -o-transform: @string;
+        transform: @string;
+}
+
+/* TRANSITION ********************************************************************/
+
+.eMixinTransition (@string) {
+	-webkit-transition: @string;  
+	-moz-transition:    @string;
+	-ms-transition:     @string; 
+	-o-transition:      @string;  
+}
+
+/* FLAGSPRITE *******************************************************************/
+
+.eMixinGenerateFlagsSprite(@eColCount, @eRowCount, @eColDiff, @eRowDiff) {
+	@eFlagsTotalCount: length(@eCountriesFlagsList);
+	.eColLoop (@eCol) when (@eCol < @eColCount) {
+		.eRowLoop(@eRow) when (@eRow < @eRowCount) {
+     		 @eFlagsCount: (@eCol * @eRowCount) + @eRow;
+      		.eFinalEval(@eDummy) when (@eFlagsCount < @eFlagsTotalCount) {
+				@eListIndex: (@eCol * @eRowCount) + (@eRow + 1);
+     			@eStrAt: extract(@eCountriesFlagsList, @eListIndex);
+     			@eColVal: @eCol * @eColDiff;
+     			@eRowVal: @eRow * @eRowDiff;
+    			a.eSmallFlag_@{eStrAt}:before {
+        			background-position: unit(@eColVal, px) unit(@eRowVal, px) !important;
+        			&:hover{
+        			    background-position: unit(@eColVal, px) unit(@eRowVal, px) !important;
+        			}
+				}
+    		}
+    		.eFinalEval(@eRow  * @eCol);
+   			.eRowLoop(@eRow + 1);
+		}
+		.eRowLoop(0);
+		.eColLoop(@eCol + 1);
+	}	
+	.eColLoop(0);	
+}
+
+/* SPRITE HORIZONTAL *******************************************************************/
+
+.eMixinGenerateSprite(@eSpriteList, @eColDiff, @eKeyword, @eParamsList: @eKeyword) {
+	@eImgCount: length(@eSpriteList);
+	.eColLoop(@eCol) when (@eCol < @eImgCount) {
+		@eListIndex: @eCol + 1;
+		@eStrAt: extract(@eSpriteList, @eListIndex);
+		@ePos: @eColDiff * @eCol;
+		.eStringEquals(@eKeyword, @eStrAt, @eParamsList, @ePos);
+		.eColLoop(@eCol + 1);
+	}
+  .eColLoop(0);
+};
+
+.eStringEquals(@key, @ext, @str, @val) when (@ext = @key) {
+	@s:  ~"@{str}";
+  @{s} {
+		background-position: unit(@val, px) 0px;
+	}
+};
+
+/* BACKGROUND TRANSPARENCY *******************************************************************/
+
+.eMixinBgTransparency(@color, @alpha: 1) {
+  background:rgba( red(@color), green(@color), blue(@color), @alpha);
+}
