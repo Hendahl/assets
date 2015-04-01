@@ -28,22 +28,22 @@ $.publish("/some/topic", [ "a", "b", "c" ]);
 $.unsubscribe("/some/topic"); */
 
 
- /*global define: false, jquery: false */
+/*global define: false, jquery: false */
 
-define(["jquery"], function ($) {
-	var o = $({});
+define(["jquery"], function($) {
+    var o = $({});
 
-	return {
-		subscribe: function () {
-			o.on.apply(o, arguments);
-		},
+    return {
+        subscribe: function() {
+            o.on.apply(o, arguments);
+        },
 
-		unsubscribe: function () {
-			o.off.apply(o, arguments);
-		},
+        unsubscribe: function() {
+            o.off.apply(o, arguments);
+        },
 
-		publish: function () {
-			o.trigger.apply(o, arguments);
-		}
-	};
+        publish: function() {
+            o.trigger.apply(o, arguments);
+        }
+    };
 });

@@ -2,59 +2,59 @@
  * @author  Lars Hendahl
  */
 
- 
- /*global define: false, jquery: false */
 
-define(function () {
-	"use strict";
-	var ls = {},
-		isSupportedLocalStorage, lStorage = window.localStorage;
+/*global define: false, jquery: false */
 
-	isSupportedLocalStorage = function () {
-		try {
-			return 'localStorage' in window && window.localStorage !== null;
-		} catch (e) {
-			return false;
-		}
-	};
+define(function() {
+    "use strict";
+    var ls = {},
+        isSupportedLocalStorage, lStorage = window.localStorage;
 
-	ls.isAvailable = isSupportedLocalStorage();
+    isSupportedLocalStorage = function() {
+        try {
+            return 'localStorage' in window && window.localStorage !== null;
+        } catch (e) {
+            return false;
+        }
+    };
 
-	ls.getItem = function (key) {
-		if (ls.isAvailable) {
-			return lStorage.getItem("ericsson-" + key);
-		}
-	};
+    ls.isAvailable = isSupportedLocalStorage();
 
-	ls.getKey = function (index) {
-		if (ls.isAvailable) {
-			return lStorage.key(index);
-		}
-	};
+    ls.getItem = function(key) {
+        if (ls.isAvailable) {
+            return lStorage.getItem("NAME-" + key);
+        }
+    };
 
-	ls.setItem = function (key, value) {
-		if (ls.isAvailable) {
-			return lStorage.setItem("ericsson-" + key, value);
-		}
-	};
+    ls.getKey = function(index) {
+        if (ls.isAvailable) {
+            return lStorage.key(index);
+        }
+    };
 
-	ls.removeItem = function (key) {
-		if (ls.isAvailable) {
-			return lStorage.removeItem("ericsson-" + key);
-		}
-	};
+    ls.setItem = function(key, value) {
+        if (ls.isAvailable) {
+            return lStorage.setItem("NAME-" + key, value);
+        }
+    };
 
-	ls.clearStorage = function () {
-		if (ls.isAvailable) {
-			return lStorage.clear();
-		}
-	};
+    ls.removeItem = function(key) {
+        if (ls.isAvailable) {
+            return lStorage.removeItem("NAME-" + key);
+        }
+    };
 
-	ls.getLength = function () {
-		if (ls.isAvailable) {
-			return lStorage.length;
-		}
-	};
+    ls.clearStorage = function() {
+        if (ls.isAvailable) {
+            return lStorage.clear();
+        }
+    };
 
-	return ls;
+    ls.getLength = function() {
+        if (ls.isAvailable) {
+            return lStorage.length;
+        }
+    };
+
+    return ls;
 });

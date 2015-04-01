@@ -5,20 +5,20 @@
 require.config({
     //waitSeconds: 15,
     paths: {
-    	"jquery": "jquery",
+        "jquery": "jquery",
         "jquery.flexslider": "vendor/jquery.flexslider"
     },
     shim: {
         "jquery": {
             exports: '$'
         },
-         "jquery.flexslider": {
+        "jquery.flexslider": {
             deps: ["jquery"],
             exports: "flexslider"
         }
     }
 });
-require(["jquery"], function ($) {
-	require(widgets);
-	console.log("$.fn.jquery:", $.fn.jquery);
+require(["jquery"], function($) {
+    require(widgets);
+    console.log("$.fn.jquery:", $.fn.jquery);
 });

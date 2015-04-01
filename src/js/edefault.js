@@ -6,8 +6,7 @@
 
 
 define([
-        "widgets/ewidget", 
+        "widgets/ewidget",
         "widgets/emenuwidget"
-        ],
-		function() {
-		});
+    ],
+    function() {});

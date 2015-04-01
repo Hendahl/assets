@@ -10,29 +10,29 @@
 
 
 
- /*global define: false, jquery: false */
- 
-define(function () {
-	"use strict";
-	var match, defaults;
-	match = {};
-	defaults = {
-		mobileDeviceBreakPoint: 768
-	};
-	match.mobileDeviceWidth = function (widthValue) {
-		var smallDevice = false;
-		if (widthValue === undefined) {
-			widthValue = defaults.mobileDeviceBreakPoint;
-		}
-		if (window.matchMedia) {
-			if (window.matchMedia("(min-width: " + widthValue + "px)").matches) {
-				smallDevice = false;
-			} else {
-				smallDevice = true;
-			}
-		}
-		return smallDevice;
-	};
+/*global define: false, jquery: false */
 
-	return match;
+define(function() {
+    "use strict";
+    var match, defaults;
+    match = {};
+    defaults = {
+        mobileDeviceBreakPoint: 768
+    };
+    match.mobileDeviceWidth = function(widthValue) {
+        var smallDevice = false;
+        if (widthValue === undefined) {
+            widthValue = defaults.mobileDeviceBreakPoint;
+        }
+        if (window.matchMedia) {
+            if (window.matchMedia("(min-width: " + widthValue + "px)").matches) {
+                smallDevice = false;
+            } else {
+                smallDevice = true;
+            }
+        }
+        return smallDevice;
+    };
+
+    return match;
 });

@@ -2,92 +2,92 @@
  * @author  Lars Hendahl
  */
 
- /*global define: false, jquery: false */
- 
-define(["jquery", "widgets/ewidget"], function ($, widget) {
-	"use strict";
-	var eCookieBannerWidget = widget({
-		element: "#eCookieMsg",
-		dataAttribute: "",
+/*global define: false, jquery: false */
 
-		defaults: {
-			name: "eAvtalCookies",
-			path: "/",
-			years: 2
-		},
+define(["jquery", "widgets/ewidget"], function($, widget) {
+    "use strict";
+    var eCookieBannerWidget = widget({
+        element: "#eCookieMsg",
+        dataAttribute: "",
 
-		events: {
-			"click input": "buttonHandler"
-		},
+        defaults: {
+            name: "eAvtalCookies",
+            path: "/",
+            years: 2
+        },
 
-		elements: {},
+        events: {
+            "click input": "buttonHandler"
+        },
 
-		setExpireDays: function () {
-			var now = new Date();
+        elements: {},
 
-			now.setFullYear(now.getFullYear() + this.options.years);
-			this.options.expires = now;
-		},
+        setExpireDays: function() {
+            var now = new Date();
 
-		setCookie: function (val) {
-			this.setExpireDays();
-			document.cookie = this.options.name + "=" + val + "; path=" + this.options.path + "; expires=" + this.options.expires + ";";
-		},
+            now.setFullYear(now.getFullYear() + this.options.years);
+            this.options.expires = now;
+        },
 
-		getCurrentVal: function (option) {
-			var eVal = option.split("=")[1];
+        setCookie: function(val) {
+            this.setExpireDays();
+            document.cookie = this.options.name + "=" + val + "; path=" + this.options.path + "; expires=" + this.options.expires + ";";
+        },
 
-			switch (eVal) {
-			case "true":
-				this.options.cookieValue = true;
-				break;
-			case "false":
-				this.options.cookieValue = false;
-				break;
-			}
-		},
+        getCurrentVal: function(option) {
+            var eVal = option.split("=")[1];
 
-		isCookieAvailable: function () {
-			var eCookieArr = document.cookie.split(";"),
-				i,
-				eLen = eCookieArr.length,
-				status = false;
+            switch (eVal) {
+                case "true":
+                    this.options.cookieValue = true;
+                    break;
+                case "false":
+                    this.options.cookieValue = false;
+                    break;
+            }
+        },
 
-			for (i = 0; i < eLen; i += 1) {
-				if (eCookieArr[i].replace(" ", "").indexOf(this.options.name) === 0) {
-					this.getCurrentVal(eCookieArr[i].replace(" ", ""));
-					status = true;
-				}
-			}
-			return status;
-		},
+        isCookieAvailable: function() {
+            var eCookieArr = document.cookie.split(";"),
+                i,
+                eLen = eCookieArr.length,
+                status = false;
 
-		toggleBanner: function () {
-			//this.$element.toggleClass("eHide");
-		},
+            for (i = 0; i < eLen; i += 1) {
+                if (eCookieArr[i].replace(" ", "").indexOf(this.options.name) === 0) {
+                    this.getCurrentVal(eCookieArr[i].replace(" ", ""));
+                    status = true;
+                }
+            }
+            return status;
+        },
 
-		buttonHandler: function (ev) {
-			ev.preventDefault();
-			this.setCookie(true);
-			this.toggleBanner();
-		},
+        toggleBanner: function() {
+            //this.$element.toggleClass("eHide");
+        },
 
-		eCookieInit: function () {
-			var status = this.isCookieAvailable();
-			if (status) {
-				if (!this.options.cookieValue) {
-					this.toggleBanner();
-				}
-			} else {
-				this.setCookie(false);
-				this.toggleBanner();
-			}
-		},
+        buttonHandler: function(ev) {
+            ev.preventDefault();
+            this.setCookie(true);
+            this.toggleBanner();
+        },
 
-		onLoad: function () {
-			this.eCookieInit();
-		}
-	});
+        eCookieInit: function() {
+            var status = this.isCookieAvailable();
+            if (status) {
+                if (!this.options.cookieValue) {
+                    this.toggleBanner();
+                }
+            } else {
+                this.setCookie(false);
+                this.toggleBanner();
+            }
+        },
 
-	return eCookieBannerWidget;
+        onLoad: function() {
+            this.eCookieInit();
+        }
+    });
+
+    return eCookieBannerWidget;
 });

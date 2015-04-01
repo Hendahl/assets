@@ -1,166 +1,166 @@
 /**
  * @author  Lars Hendahl
  */
- 
+
 /*global define: false, jquery: false */
 
-define(["jquery"], function ($) {
-	"use strict";
+define(["jquery"], function($) {
+    "use strict";
 
-	var delegateEventSplitter = /^(\S+)\s*(.*)$/,
+    var delegateEventSplitter = /^(\S+)\s*(.*)$/,
 
-		widget = {
-			element: "",
-			dataAttribute: "",
+        widget = {
+            element: "",
+            dataAttribute: "",
 
-			proxy: function (func) {
-				if ($.isFunction(func) === false) {
-					throw new Error("The value of 'proxy' needs to be a function");
-				}
+            proxy: function(func) {
+                if ($.isFunction(func) === false) {
+                    throw new Error("The value of 'proxy' needs to be a function");
+                }
 
-				return $.proxy(func, this);
-			}
-		},
+                return $.proxy(func, this);
+            }
+        },
 
-		propertyMappers = {
-			events: function (obj) {
-				var event, match, eventName, method, selector;
+        propertyMappers = {
+            events: function(obj) {
+                var event, match, eventName, method, selector;
 
-				if (typeof obj !== "object") {
-					throw new Error("The value of 'events' needs to be an object");
-				}
+                if (typeof obj !== "object") {
+                    throw new Error("The value of 'events' needs to be an object");
+                }
 
-				for (event in obj) {
-					if (obj.hasOwnProperty(event)) {
-						match = event.match(delegateEventSplitter);
-						eventName = match[1];
-						selector = match[2];
-						method = this[obj[event]];
+                for (event in obj) {
+                    if (obj.hasOwnProperty(event)) {
+                        match = event.match(delegateEventSplitter);
+                        eventName = match[1];
+                        selector = match[2];
+                        method = this[obj[event]];
 
-						if (typeof method === "function") {
-							if (selector === "") {
-								this.$element.on(eventName, method);
-							} else {
-								this.$element.on(eventName, selector, $.proxy(method, this));
-							}
-						}
-					}
-				}
-			},
+                        if (typeof method === "function") {
+                            if (selector === "") {
+                                this.$element.on(eventName, method);
+                            } else {
+                                this.$element.on(eventName, selector, $.proxy(method, this));
+                            }
+                        }
+                    }
+                }
+            },
 
-			elements: function (obj) {
-				var element, wrappedElements, elements;
+            elements: function(obj) {
+                var element, wrappedElements, elements;
 
-				if (typeof obj !== "object") {
-					throw new Error("The value of 'elements' needs to be an object");
-				}
+                if (typeof obj !== "object") {
+                    throw new Error("The value of 'elements' needs to be an object");
+                }
 
-				for (element in obj) {
-					if (obj.hasOwnProperty(element)) {
-						this[element] = this.$element.find(obj[element]);
-					}
-				}
-			},
+                for (element in obj) {
+                    if (obj.hasOwnProperty(element)) {
+                        this[element] = this.$element.find(obj[element]);
+                    }
+                }
+            },
 
-			defaults: function (obj) {
-				var result, data;
+            defaults: function(obj) {
+                var result, data;
 
-				if (typeof obj !== "object") {
-					throw new Error("The value of 'defaults' needs to be an object");
-				}
+                if (typeof obj !== "object") {
+                    throw new Error("The value of 'defaults' needs to be an object");
+                }
 
-				data = this.$element.data(this.dataAttribute.toLowerCase());
+                data = this.$element.data(this.dataAttribute.toLowerCase());
 
-				if (data) {
-					data = $.extend({}, obj, data);
-				} else {
-					data = obj;
-				}
+                if (data) {
+                    data = $.extend({}, obj, data);
+                } else {
+                    data = obj;
+                }
 
-				this.options = data;
-			},
+                this.options = data;
+            },
 
-			onLoad: function (func) {
-				if ($.isFunction(func) === false) {
-					throw new Error("The value of 'onLoad' needs to be a function");
-				}
+            onLoad: function(func) {
+                if ($.isFunction(func) === false) {
+                    throw new Error("The value of 'onLoad' needs to be a function");
+                }
 
-				func.call(this);
-			}
-		},
+                func.call(this);
+            }
+        },
 
-		setup = function (obj, $el) {
-			var key;
+        setup = function(obj, $el) {
+            var key;
 
-			obj.$element = $el;
+            obj.$element = $el;
 
-			for (key in propertyMappers) {
-				if (propertyMappers.hasOwnProperty(key) && obj.hasOwnProperty(key)) {
-					propertyMappers[key].call(obj, obj[key]);
-				}
-			}
+            for (key in propertyMappers) {
+                if (propertyMappers.hasOwnProperty(key) && obj.hasOwnProperty(key)) {
+                    propertyMappers[key].call(obj, obj[key]);
+                }
+            }
 
-			obj.hasLoaded = true;
+            obj.hasLoaded = true;
 
-			return obj;
-		};
+            return obj;
+        };
 
-	return function () {
-		var childObject, init, modules, initOne;
+    return function() {
+        var childObject, init, modules, initOne;
 
-		modules = (1 <= arguments.length) ? [].slice.call(arguments, 0) : [];
-		modules.unshift(true, {}, widget);
+        modules = (1 <= arguments.length) ? [].slice.call(arguments, 0) : [];
+        modules.unshift(true, {}, widget);
 
-		// Make a deep extend of modules
-		childObject = $.extend.apply($, modules);
+        // Make a deep extend of modules
+        childObject = $.extend.apply($, modules);
 
-		childObject.hasLoaded = false;
+        childObject.hasLoaded = false;
 
-		childObject.initOne = function (elem) {
-			var instances = [],
-				instance;
-			if (elem instanceof jquery) {
-				instance = setup($.extend({}, childObject), elem);
-				instances.push(instance);
-				childObject.instances = instances;
-			}
-		};
+        childObject.initOne = function(elem) {
+            var instances = [],
+                instance;
+            if (elem instanceof jquery) {
+                instance = setup($.extend({}, childObject), elem);
+                instances.push(instance);
+                childObject.instances = instances;
+            }
+        };
 
-		childObject.init = function () {
-			var $el = $(childObject.element),
-				instances = [];
+        childObject.init = function() {
+            var $el = $(childObject.element),
+                instances = [];
 
-			if (childObject.element === null) {
-				throw new Error("element for widget is not defined");
-			}
+            if (childObject.element === null) {
+                throw new Error("element for widget is not defined");
+            }
 
-			$el.each(function () {
-				var instance = setup($.extend({}, childObject), $(this));
+            $el.each(function() {
+                var instance = setup($.extend({}, childObject), $(this));
 
-				instances.push(instance);
-			});
+                instances.push(instance);
+            });
 
-			childObject.instances = instances;
-		};
+            childObject.instances = instances;
+        };
 
-		/**
-		 *   Reinitiate one or all jquery elements
-		 *   @param elemString: The selector as a string (ex: this.elements.x)
-		 */
-		childObject.reInitiateElements = function (elemString) {
-			var element;
-			if (childObject.hasOwnProperty('element')) {
-				for (element in this.elements) {
-					// Reset all elements if elemString is undefined otherwise reset only the specified element.
-					if (typeof elemString === 'undefined' || (typeof elemString !== 'undefined' && elemString === this.elements[element])) {
-						this[element] = this.$element.find(this.elements[element]);
-					}
-				}
-			}
-		};
+        /**
+         *   Reinitiate one or all jquery elements
+         *   @param elemString: The selector as a string (ex: this.elements.x)
+         */
+        childObject.reInitiateElements = function(elemString) {
+            var element;
+            if (childObject.hasOwnProperty('element')) {
+                for (element in this.elements) {
+                    // Reset all elements if elemString is undefined otherwise reset only the specified element.
+                    if (typeof elemString === 'undefined' || (typeof elemString !== 'undefined' && elemString === this.elements[element])) {
+                        this[element] = this.$element.find(this.elements[element]);
+                    }
+                }
+            }
+        };
 
-		$(childObject.init);
+        $(childObject.init);
 
-		return childObject;
-	};
+        return childObject;
+    };
 });

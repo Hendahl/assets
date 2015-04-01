@@ -11,7 +11,7 @@
          files: [{
         expand: true,                 
         cwd: 'src/images',                   
-        src: ['**/*.svg'],   /
+        src: ['**/*.svg'],  
         dest: 'dist/'                  
       }]
     }
