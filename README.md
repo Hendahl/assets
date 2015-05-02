@@ -5,7 +5,7 @@ Frontend code for Project x  1.0.
 ## Install
 * NodeJS https://nodejs.org/
 * Grunt http://gruntjs.com/
-* From diglias-ui in terminal/console
+* From Project x  in terminal/console
 * run Npm install
 * run Grunt
 
