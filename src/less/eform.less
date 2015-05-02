@@ -1,55 +1,68 @@
-/**
+/*
  * @author  Lars Hendahl
  */
- 
-form {	
-	label {
-		color: @eBaseColorGrey2;
-		font-weight: normal;
-		margin: 0 0 @eBaseGap/5 0;
-	}
-	
-	input[type="text"], 
-	input[type="number"], 
-	input[type="tel"], 
-	input[type="email"], 
-	input[type="password"], 
-	input[type="radio"], 
-	input[type="date"],
-	input[type="submit"],
-	input[type="reset"],  
-	input[type="button"],
-	select, 
-	textarea {
-		border: 1px solid @eBaseColorGrey2;
-    	padding:  0 @eBaseGap;
-		.eMixinBorderRadius();
-		width: 100%;
-		line-height: 1rem;
-		height:1rem;
-	}	
-	
-	input[type="text"]:focus, 
-	input[type="number"]:focus, 
-	input[type="tel"]:focus, 
-	input[type="email"]:focus, 
-	input[type="password"]:focus, 
-	input[type="radio"]:focus,
-	input[type="date"]:focus, 
-	select:focus, 
-	textarea:focus {
-    	border-color:@eBaseColorGrey4;
-	}
 
-	input[type="submit"],
-	input[type="reset"],  
-	input[type="button"] {  
-		color: @eBaseColorWhite1;
-		cursor: pointer;
-		background: @eBaseColorGrey2;
-		&.eBigButton{
-			height:3rem;
-			.eMixinFont(1.4, 1.18);
-		}
-	}	
-}
+ form {
+ 	padding-bottom:  4rem;
+ 	label {
+ 		color: @eBaseColorGrey2;
+ 		font-weight: normal;
+ 		margin: 0 0 @eBaseGap/5 0;
+ 		padding-left:  1rem*0.5;
+ 	}
+
+ 	input[type="text"],
+ 	input[type="number"],
+ 	input[type="tel"],
+ 	input[type="email"],
+ 	input[type="password"],
+ 	input[type="radio"],
+ 	input[type="date"],
+ 	input[type="submit"],
+ 	input[type="reset"],
+ 	input[type="button"],
+ 	select,
+ 	textarea {
+ 		border: 1px solid @eBaseColorGrey4;
+ 		padding:  0 @eBaseGap/3;
+ 		.eMixinBorderRadius();
+ 		width: 100%;
+ 		line-height: 3rem;
+ 		height: 3rem;
+ 		padding-left:  1rem*0.5;
+
+
+ 	}
+
+ 	input[type="text"]:focus,
+ 	input[type="number"]:focus,
+ 	input[type="tel"]:focus,
+ 	input[type="email"]:focus,
+ 	input[type="password"]:focus,
+ 	input[type="radio"]:focus,
+ 	input[type="date"]:focus,
+ 	select:focus,
+ 	textarea:focus {
+ 		border-color:@eBaseColorGrey4;
+ 	}
+
+ 	/*input[type="text"], input[type="text"].eSearchFormInput ,input[type="date"], input[type="password"], select {
+ 		.eMixinGradientHorizontalWithStop(@eBaseColorGrey1, 0, @eBaseColorWhite1, 0.2, @eBaseColorWhite1);
+ 		}*/
+
+ 		button,
+ 		input[type="submit"],
+ 		input[type="reset"],
+ 		input[type="button"] {
+ 			color: @eBaseColorWhite1;
+ 			border: 1px solid @eBaseColorBlue1;
+ 			cursor: pointer;
+ 			background: @eBaseColorBlue1;
+ 			height:3rem;
+ 			.eMixinBorderRadius();
+ 		}
+ 		li{
+ 			margin:@eBaseGap 0;
+ 		}
+
+ 	}

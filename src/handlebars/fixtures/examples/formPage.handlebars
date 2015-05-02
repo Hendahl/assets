@@ -1,0 +1,87 @@
+<section class="eOW">
+  <div class="eIW">
+    <div class="eRow">
+      <h1>{{header}}</h1>
+      <p>{{text1}}</p>
+    </div>
+  </div>
+</section>
+<section class="eOW">
+  <div class="eIW">
+    <div class="eGCol8 eGPush0">
+      <h2>{{subheader}}</h2>
+      <form autocomplete="off" class="eFormValidate" action="*">
+        <ul class="eNoDots">
+          <li>
+            <label for="eText1">Text : Not required max 10 characters
+            </label>
+            <input type="text" title="Text : Not required  max 10 characters" maxlength="100" data-h5-errorid="" tabindex="1" id="eText1">
+          </li>
+          <li>
+            <label for="eTextAlpha">Text : Alpha required max 10 characters</label>
+            <input type="text" title="Text : Alpha required max 10 characters" pattern="[a-zA-Z]+" maxlength="10" aria-required="true" required="required" data-h5-errorid="eInvalidTextAlpha" tabindex="2" id="eTextAlpha" placeholder="a-z A-Z">
+            <p id="eInvalidTextAlpha" class="eError" style="display: none"></p>
+          </li>
+          <li>
+            <label for="eTextPassword">Text : Password required 6 characters</label>
+            <input type="password" title="Password : Password required 6 characters" pattern=".{6,}" maxlength="6" aria-required="true" required="required" data-h5-errorid="eInvalidTextPassword" tabindex="3" id="eTextPassword">
+            <p id="eInvalidTextPassword" class="eError" style="display: none">
+            </p>
+          </li>
+          <li>
+            <label for="eLoginFormUserName">Swedish Civic required maxlength 15 (eg.19121212-1212)</label>
+            <input type="text" title="Swedish Civic required" pattern="^(\S+@\S+\.\S+|\d{4,9}|(19|20)?\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])[-+]?\d{4})(\s+)?$" maxlength="15" aria-required="true" required="required" data-h5-errorid="eInvalidLoginFormUserName"
+            tabindex="4" id="eLoginFormUserName" class="" placeholder="YYYYMMDD-NNNN">
+            <p id="eInvalidLoginFormUserName" class="eError" style="display: none"> </p>
+          </li>
+          <li>
+            <label for="eTextNumber">Numbers with or without decimals required maxlength 10 </label>
+            <input type="text" title="Number required" pattern="[-+]?[0-9]*[.,]?[0-9]+" maxlength="10" aria-required="true" required="required" data-h5-errorid="eInvalidTextNumber" tabindex="5" id="eTextNumber" class="" placeholder="0.00" />
+            <p id="eInvalidTextNumber" class="eError" style="display: none"></p>
+          </li>
+          <li>
+            <label for="eTextMail">Mail required </label>
+            <input type="text" title="Mail required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="50" aria-required="true" required="required" data-h5-errorid="eInvalidTextMail" tabindex="6" id="eTextMail" class="" placeholder="abc@de.fg">
+            <p id="eInvalidTextMail" class="eError" style="display: none"></p>
+          </li>
+          <li>
+            <label for="eTextMirror1">Mirror field required required 3 characters</label>
+            <input type="text" title="Mirror field required" pattern=".{3,}" maxlength="10" aria-required="true" required="required" data-h5-errorid="eInvalidTextMirror1" tabindex="7" id="eTextMirror1" class="" placeholder="?">
+            <p id="eInvalidTextMirror1" class="eError" style="display: none"></p>
+          </li>
+          <li>
+            <label for="eTextMirror2">Repeat Mirror value above required 3 characters</label>
+            <input data-mirrorfield="eTextMirror1" type="text" title="Mirror field required and should be the same as above" pattern=".{3,}" maxlength="10" aria-required="true" required="required" data-h5-errorid="eInvalidTextMirror2" tabindex="8" id="eTextMirror2"
+            class="" placeholder="?">
+            <p id="eInvalidTextMirror2" class="eError" style="display: none"></p>
+          </li>
+          <li>
+            <label for="eSelect1">Select Option required</label>
+            <select id="eSelect1" title="Option required" aria-required="true" required="required" data-h5-errorid="eInvalidSelect1" tabindex="10" class="">
+              <option value="">- Select-</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+            <p id="eInvalidSelect1" class="eError" style="display: none"></p>
+          </li>
+          <li>
+            <label for="eTextArea1">Text area required</label>
+            <textarea aria-required="true" required="required" id="eTextArea1" title="Text area required" data-h5-errorid="eInvalidTextArea1" tabindex="11"></textarea>
+            <p id="eInvalidTextArea1" class="eError" style="display: none"></p>
+          </li>
+          <li>
+            <input type="checkbox" required="required" id="eCheckbox1" title="Checkbox required" data-h5-errorid="eInvalidCheckbox1" tabindex="12" />
+            <label for="eCheckbox1">Checkbox checked required
+              <span id="eInvalidCheckbox1" class="eError" style="display: none"></span>
+            </label>
+          </li>
+        </ul>
+        <button name="submit" class="eBtn eLoginBtn" type="submit" tabindex="13">Submit</button>
+      </form>
+    </div>
+    <div class="eGCol4 eGPush8">
+
+    </div>
+  </div>
+</section>

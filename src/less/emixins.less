@@ -1,20 +1,20 @@
-/**
+/*
  * @author  Lars Hendahl
  */
- 
-/* CLEAR POSITION *************************************************************/
 
-.eMixinClearFix() {
-	&:before,
-	&:after {
-		content: " ";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
-}
-/* GRID   **********************************************************************/
+ /* CLEAR POSITION *************************************************************/
+
+ .eMixinClearFix() {
+ 	&:before,
+ 	&:after {
+ 		content: " ";
+ 		display: table;
+ 	}
+ 	&:after {
+ 		clear: both;
+ 	}
+ }
+ /* GRID   **********************************************************************/
 /* The base grid is calculated from 12 columns 11 gutters, column width 54 px and
 /* gutter width 30px = total width of 978px                                    */
 
@@ -29,18 +29,18 @@
 }
 
 /* FONT   **********************************************************************/
-	
+
 /*1rem = 16px lineheight 1.4 */
 /*38 1.18 */
 
 .eMixinFont(@fontSize:1, @lineHeight:1.4){
-    font-size: ~"@{fontSize}rem"; 
-    line-height: @lineHeight;
+	font-size: ~"@{fontSize}rem";
+	line-height: @lineHeight;
 }
 
 .eMixinSmooth(){
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -63,7 +63,7 @@
 }
 .eMixinBlendGradient(@from: @eBaseColorBlack, @to: @eBaseColorWhite) {
 	background: @from; /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
 	background: -moz-linear-gradient(left,  @from 0%, @to 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, right top, color-stop(0%,@from), color-stop(100%,@to)); /* Chrome,Safari4+ */
@@ -100,9 +100,9 @@
 	border-bottom-left-radius:          @eBottomLeft;
 	border-top-left-radius:             @eTopLeft;
 
-	-moz-background-clip:    padding; 
-	-webkit-background-clip: padding-box; 
-	background-clip:         padding-box; 
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
 }
 .eMixinGradientHorizontal (@eStartColor:@eBaseColorGrey3, @eEndColor: @eBaseColorWhite) {
 	background-color: @eStartColor;
@@ -114,7 +114,7 @@
 }
 
 .eMixinGradientVertical (@eStartColor:@eBaseColorGrey3, @eEndColor: @eBaseColorWhite) {
- 	background-color: @eStartColor;
+	background-color: @eStartColor;
 	background-image: -webkit-gradient(linear, left top, right top, from(@eStartColor), to(@eEndColor));
 	background-image: -webkit-linear-gradient(left, @eStartColor, @eEndColor);
 	background-image: -moz-linear-gradient(left, @eStartColor, @eEndColor);
@@ -164,19 +164,19 @@
 
 .eMixinTransform (@string) {
 	-webkit-transform: @string;
-   -moz-transform: @string;
-    -ms-transform: @string;
-     -o-transform: @string;
-        transform: @string;
+	-moz-transform: @string;
+	-ms-transform: @string;
+	-o-transform: @string;
+	transform: @string;
 }
 
 /* TRANSITION ********************************************************************/
 
 .eMixinTransition (@string) {
-	-webkit-transition: @string;  
+	-webkit-transition: @string;
 	-moz-transition:    @string;
-	-ms-transition:     @string; 
-	-o-transition:      @string;  
+	-ms-transition:     @string;
+	-o-transition:      @string;
 }
 
 /* FLAGSPRITE *******************************************************************/
@@ -185,26 +185,26 @@
 	@eFlagsTotalCount: length(@eCountriesFlagsList);
 	.eColLoop (@eCol) when (@eCol < @eColCount) {
 		.eRowLoop(@eRow) when (@eRow < @eRowCount) {
-     		 @eFlagsCount: (@eCol * @eRowCount) + @eRow;
-      		.eFinalEval(@eDummy) when (@eFlagsCount < @eFlagsTotalCount) {
+			@eFlagsCount: (@eCol * @eRowCount) + @eRow;
+			.eFinalEval(@eDummy) when (@eFlagsCount < @eFlagsTotalCount) {
 				@eListIndex: (@eCol * @eRowCount) + (@eRow + 1);
-     			@eStrAt: extract(@eCountriesFlagsList, @eListIndex);
-     			@eColVal: @eCol * @eColDiff;
-     			@eRowVal: @eRow * @eRowDiff;
-    			a.eSmallFlag_@{eStrAt}:before {
-        			background-position: unit(@eColVal, px) unit(@eRowVal, px) !important;
-        			&:hover{
-        			    background-position: unit(@eColVal, px) unit(@eRowVal, px) !important;
-        			}
+				@eStrAt: extract(@eCountriesFlagsList, @eListIndex);
+				@eColVal: @eCol * @eColDiff;
+				@eRowVal: @eRow * @eRowDiff;
+				a.eSmallFlag_@{eStrAt}:before {
+					background-position: unit(@eColVal, px) unit(@eRowVal, px) !important;
+					&:hover{
+						background-position: unit(@eColVal, px) unit(@eRowVal, px) !important;
+					}
 				}
-    		}
-    		.eFinalEval(@eRow  * @eCol);
-   			.eRowLoop(@eRow + 1);
+			}
+			.eFinalEval(@eRow  * @eCol);
+			.eRowLoop(@eRow + 1);
 		}
 		.eRowLoop(0);
 		.eColLoop(@eCol + 1);
-	}	
-	.eColLoop(0);	
+	}
+	.eColLoop(0);
 }
 
 /* SPRITE HORIZONTAL *******************************************************************/
@@ -218,12 +218,12 @@
 		.eStringEquals(@eKeyword, @eStrAt, @eParamsList, @ePos);
 		.eColLoop(@eCol + 1);
 	}
-  .eColLoop(0);
+	.eColLoop(0);
 };
 
 .eStringEquals(@key, @ext, @str, @val) when (@ext = @key) {
 	@s:  ~"@{str}";
-  @{s} {
+	@{s} {
 		background-position: unit(@val, px) 0px;
 	}
 };
@@ -231,5 +231,5 @@
 /* BACKGROUND TRANSPARENCY *******************************************************************/
 
 .eMixinBgTransparency(@color, @alpha: 1) {
-  background:rgba( red(@color), green(@color), blue(@color), @alpha);
+	background:rgba( red(@color), green(@color), blue(@color), @alpha);
 }

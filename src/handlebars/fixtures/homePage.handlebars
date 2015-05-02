@@ -1,0 +1,16 @@
+    <div class="eMain" role="main">
+
+
+      {{#with sectionHero}}
+      <section class="eOW eHero" id="eSectionHero">
+        <div class="eIW  eCarousel">
+          {{#each slots}}
+          <div class="item">
+            <img class="lazyOwl" alt="{{altImage}}" src="../../images/elazy.gif" data-src="{{{image}}}">
+          </div>
+          {{/each}}
+
+        </div>
+      </div>
+      {{/with}}
+    </div>

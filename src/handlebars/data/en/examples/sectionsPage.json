@@ -1,0 +1,12 @@
+{
+    "header": "Sections",
+    "text1": "Text1",
+    "sections": {
+        "0": {
+            "ajaxsource": "https://www.google.se/",
+            "class": "eInfiniteItem eRow eAjaxSpin",
+            "header": "Section 1",
+            "text1": "test"
+        }
+    }
+}

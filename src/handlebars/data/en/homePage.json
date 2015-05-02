@@ -1,0 +1,20 @@
+{
+    "jsWidgets": "var widgets = ['widgets/emenuwidget'];",
+    "sectionHero": {
+        "slots": {
+            "0": {
+                "class": "eGCol6 eGPush6",
+                "header": "header",
+                "image": "../../images/content/sign.jpg",
+                "text1": "text1"
+                },
+                "1": {
+                    "class": "eGCol6 eGPush0",
+                    "header": "header",
+                    "image": "../../images/content/street.jpg",
+                    "text1": "text1"
+                }
+            }
+        }
+    }
+

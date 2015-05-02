@@ -1,12 +1,9 @@
-/**
+/*
  * @author  Lars Hendahl
  */
 
-
-/*global define: false, jquery: false */
-
-define(["jquery"], function($) {
-    var animations, speed;
+ define(["jquery"], function($) {
+    var animations,speed;
     speed = 150;
 
     animations = {};
@@ -34,31 +31,25 @@ define(["jquery"], function($) {
         return dfd;
     };
 
-    animations.slideDownAndFadeIn = function($element, speed) {
+    animations.slideDownAndFadeIn = function ($element, speed) {
         var dfd = $.Deferred();
 
-        $element.stop(true, true).css({
-            "opacity": 0
-        });
+        $element.stop(true, true).css({"opacity": 0});
 
-        $element.slideDown(speed).animate({
-            "opacity": 1
-        }, speed, function() {
+        $element.slideDown(speed).animate({"opacity": 1}, speed, function() {
             dfd.resolve($element);
         });
 
         return dfd;
     };
 
-    animations.fadeOutAndSlideUp = function($element, speed) {
+    animations.fadeOutAndSlideUp = function ($element, speed) {
         var dfd = $.Deferred();
 
         $element.stop(true, true);
         $element.css("opacity", 1);
 
-        $element.animate({
-            "opacity": 0
-        }, speed);
+        $element.animate({"opacity": 0}, speed);
 
         setTimeout(function() {
             $element.slideUp(speed, function() {
@@ -70,38 +61,24 @@ define(["jquery"], function($) {
     };
 
     // Update and fade in a new text on an element
-    animations.fadeInText = function($element, text) {
-        $element.animate({
-            "opacity": 0.4
-        }, speed).text(text).animate({
-            "opacity": 1
-        }, speed);
+    animations.fadeInText = function ($element, text) {
+        $element.animate({"opacity": 0.4}, speed).text(text).animate({"opacity": 1}, speed);
     };
 
     // Update and fade in html inside an element
-    animations.fadeInHtml = function($element, html) {
-        $element.animate({
-            "opacity": 0.4
-        }, speed).html(html).animate({
-            "opacity": 1
-        }, speed);
+    animations.fadeInHtml = function ($element, html) {
+        $element.animate({"opacity": 0.4}, speed).html(html).animate({"opacity": 1}, speed);
     };
 
-    animations.fadeOut = function($element) {
-        $element.animate({
-            "opacity": 0.4
-        }, speed);
+    animations.fadeOut = function ($element) {
+        $element.animate({"opacity": 0.4}, speed);
     };
 
     // Fade out an element, and remove it's class
-    animations.fadeOutAndRemoveClass = function($element, speed, className) {
-        $element.animate({
-            "opacity": 0.0
-        }, speed, function() {
+    animations.fadeOutAndRemoveClass = function ($element,speed,className) {
+        $element.animate({"opacity": 0.0}, speed, function() {
             $element.parent().removeClass(className);
-            $element.css({
-                "opacity": 1.0
-            });
+            $element.css({"opacity":1.0});
         });
     };
 

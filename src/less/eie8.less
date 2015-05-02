@@ -1,11 +1,15 @@
-/**
+/*
  * @author  Lars Hendahl
  */
- 
-@import "evariables";
-@import "emixins";
 
-body {
-	min-width: @eMainInnerMaxWidth;
-}
 
+ @import "evariables";
+ @import "emixins";
+
+ body{
+ 	min-width:@eMainInnerMaxWidth;
+ }
+
+ [class^="eIcon"],[class*=" eIcon"], .eIcon-logo_sw,  .eIcon-logo_eng{
+ 	background-image: url("../images/sprites/esprite.png") !important;
+ }

@@ -1,74 +1,116 @@
-/**
+/*
  * @author  Lars Hendahl
  */
- 
- 
-@media only screen and (max-width: 768px){
 
-	h1:after {
-    content: "Tablet portrait and smaller";
-}
+ @media only screen and (max-width: 768px){
+ 	#eMQ:after{
+ 		content:"Tablet portrait and smaller";
+ 	}
 
-	html { font-size:@eBaseFontSizeTabletportraitandsmaller}
+ 	html{
+ 		font-size:@eBaseFontSizeTabletportraitandsmaller;
+ 	}
 
-	/* WRAPPERS ***********************************************************/
-	.cOW { overflow: hidden;}
-	
-	/* GRID ***************************************************************/
-	.eRow.eBreak{
-		.eGCol2{
-			.eMixineGCol(4,3);
-			&.eGPush2, &.eGPush8  { .eMixineGPush(4) }
-			&.eGPush4, &.eGPush10 { .eMixineGPush(8) }
-			&.eGPush6 {
-				.eMixineGPush(0);
-				clear: left;
-			}
-		}
-		.eGCol3{
-			.eMixineGCol(6,5);
-			&.eGPush0, &.eGPush6 {
-				.eMixineGPush(0);
-				clear: left;
-			}
-			&.eGPush3, &.eGPush9 { .eMixineGPush(6); }
-		}
-		.eGCol4{
-			.eMixineGCol(12,11);
-			&.eGPush0, &.eGPush4, &.eGPush8 {
-				.eMixineGPush(0);
-				clear: left;
-			}
-		}
-		.eGCol6{
-			.eMixineGCol(12,11);
-			.eMixineGPush(0);
-			clear: left;
-		}
-		.eGCol8 {
-			.eMixineGCol(12,11);
-			.eMixineGPush(0);
-			clear: left;
-		}
-		.eGCol9{
-			.eMixineGCol(12,11);
-			.eMixineGPush(0);
-			clear: left;
-		}
-		.eGCol10{
-			.eMixineGCol(12,11);
-			.eMixineGPush(0);
-			clear: left;
-		}
-	}
-	
-	/* GENERIC ***************************************************************/
-	.eNoMobile { display:none}
-	.eNoDesktop { 
-		display:block !important;
-		visibility: visible !important;
-	}
+ 	/* WRAPPERS ***********************************************************/
+ 	.cOW{
+ 		overflow:hidden;
+ 	}
 
-}
+ 	/* GRID ***************************************************************/
+ 	.eRow.eBreak{
+ 		.eGCol2{
+ 			.eMixineGCol(4,3);
+ 			&.eGPush2,&.eGPush8{
+ 				.eMixineGPush(4);
+ 			}
+ 			&.eGPush4,&.eGPush10{
+ 				.eMixineGPush(8);
+ 			}
+ 			&.eGPush6{
+ 				clear:left;
 
+ 				.eMixineGPush(0);
+ 			}
+ 		}
+ 		.eGCol3{
+ 			.eMixineGCol(6,5);
+ 			&.eGPush0,&.eGPush6{
+ 				clear:left;
 
+ 				.eMixineGPush(0);
+ 			}
+ 			&.eGPush3,&.eGPush9{
+ 				.eMixineGPush(6);
+ 			}
+ 		}
+ 		.eGCol4{
+ 			.eMixineGCol(12,11);
+ 			&.eGPush0,&.eGPush4,&.eGPush8{
+ 				clear:left;
+
+ 				.eMixineGPush(0);
+ 			}
+ 		}
+ 		.eGCol6{
+ 			clear:left;
+
+ 			.eMixineGCol(12,11);
+ 			.eMixineGPush(0);
+ 		}
+ 		.eGCol8{
+ 			clear:left;
+
+ 			.eMixineGCol(12,11);
+ 			.eMixineGPush(0);
+ 		}
+ 		.eGCol9{
+ 			clear:left;
+
+ 			.eMixineGCol(12,11);
+ 			.eMixineGPush(0);
+ 		}
+ 		.eGCol10{
+ 			clear:left;
+
+ 			.eMixineGCol(12,11);
+ 			.eMixineGPush(0);
+ 		}
+ 		.eActionLink{
+ 			margin-bottom:@eBaseGap;
+ 		}
+ 	}
+
+ 	/* GENERIC ***************************************************************/
+ 	.eNoMobile{
+ 		display:none;
+ 	}
+ 	.eNoDesktop{
+ 		display:block !important;
+ 		visibility:visible !important;
+ 	}
+ 	/*RETURN TO TOP LINK********************************************************************/
+
+ 	.eReturnTopLink {
+ 		display:block;
+ 	}
+ 	/* COUNTRYPAGE ***************************************************************/
+ 	.eCountryPage {
+ 		.eGCol4{
+ 			margin-top:@eBaseGap*2;
+ 		}
+ 		.eStrikeOut
+ 		.eGCol4{
+ 			margin-top:0;
+ 		}
+ 		.eMain .eAlignC{
+ 			text-align: left;
+ 		}
+ 		#eSectionContactUs{
+ 			li{
+ 				margin:@eBaseGap 0;
+ 			}
+ 		}
+
+ 	}
+
+ }

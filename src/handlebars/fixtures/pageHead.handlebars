@@ -1,0 +1,74 @@
+<head lang="{{lang}}">
+	<title>{{productName}} - {{edatehelper}}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+	<meta name="keywords" content="{{metaKeywords}}">
+	<meta name="description" content="{{metaDescription}}">
+	<link rel="stylesheet" href="../../css/edefault.css" />
+	<link rel="stylesheet" href="../../css/emediaqueries.css" />
+	{{#if cssfile}}
+	<link rel="stylesheet" href="../../css/{{cssfile}}" />
+	{{/if}}
+	<link rel="stylesheet" href="../../css/eprint.css" media="print" />
+	<!--[if LT IE 10]><link rel="stylesheet" href="../../css/eie.css"/><![endif]-->
+	<!--[if LT IE 9]><link rel="stylesheet" href="../../css/eie8.css"/><![endif]-->
+	<!--[if LT IE 8]><link rel="stylesheet" href="../../css/eie7.css"/><![endif]-->
+</head>
+<body class="{{cssBaseClass}} eSVG">
+	<header>
+		<!--[if LT IE 8]>
+		<div class="eOW">
+			<div class="eIW eMessage">
+				<p>{{msgOldBrowser}} <a href="http://whatbrowser.org/">{{linkReadMore}}/a></p>
+			</div>
+		</div>
+		<![endif]-->
+		{{#if msgCookie}}
+		<div class="eOW" id="eCookieMsg" >
+			<div class="eIW">
+				<div class="eRow eBreak">
+					<div  class="eGCol8 eGPush0">
+						<p>{{msgCookie}}</p>
+					</div>
+					<div class="eGCol4 eGPush8">
+						<form id="eCookieConsentButton">
+							<input type="submit" class="eBigButton" value="{{btnAmit}}">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{/if}}
+		<div class="eOW" id="eHeadBar">
+			<div class="eIW">
+				<div class="eRow">
+					<div class="eGCol1 eGPush0">
+
+						<a id="eMobileMenu" class="eIcon-menu" href="index.html" title="{{linkMenu}}">
+							{{linkMenu}}
+						</a>
+					</div>
+					<div class="eGCol10 eGPush1 eAlignC">
+
+						<a id="eHeaderLogo" href="../../index.html" title="project_x" class="eIcon-logoicon" rel="home">
+							{{productName}}
+						</a>
+					</div>
+					<div class="eGCol1 eGPush11">
+						<a id="eHeaderLogin" class="eIcon-login" href="index.html" title="{{linkLogIn}}">
+							{{linkLogIn}}
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<nav class="eOW eHide">
+			<ul class="eIW  eRow">
+				{{#each menyLinks}}
+				<li><a href="{{linkUrl}}" title="{{linkText}}">{{linkText}}</a></li>
+				{{/each}}
+			</ul>
+		</nav>
+	</header>

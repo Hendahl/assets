@@ -1,8 +1,7 @@
 /*
-
 https://gist.github.com/cowboy/661855
 
-Examples: 
+Examples:
 
 function handle(e, a, b, c) {
   // `e` is the event object, you probably don't care about it.
@@ -27,23 +26,20 @@ $.publish("/some/topic", [ "a", "b", "c" ]);
 // Unsubscribe all handlers for this topic
 $.unsubscribe("/some/topic"); */
 
+define(["jquery"], function ($) {
+	var o = $({});
 
-/*global define: false, jquery: false */
+	return {
+		subscribe: function () {
+			o.on.apply(o, arguments);
+		},
 
-define(["jquery"], function($) {
-    var o = $({});
+		unsubscribe: function () {
+			o.off.apply(o, arguments);
+		},
 
-    return {
-        subscribe: function() {
-            o.on.apply(o, arguments);
-        },
-
-        unsubscribe: function() {
-            o.off.apply(o, arguments);
-        },
-
-        publish: function() {
-            o.trigger.apply(o, arguments);
-        }
-    };
+		publish: function () {
+			o.trigger.apply(o, arguments);
+		}
+	};
 });

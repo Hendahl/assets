@@ -1,98 +1,146 @@
 /**
 * Grunt.js init config for module grunt-compile-handlebars
-* @author  lars.hendahl@cygni.se
+* @author  Lars Hendahl
 */
 module.exports = {
   pagehead_en: {
-          preHTML: 'src/handlebars/fixtures/pageHeadPre.html',
-          template: 'src/handlebars/fixtures/pageHead.handlebars',
-          templateData: 'src/handlebars/data/en/global.json',
-          output: 'dist/html/temp/en/pageHead.html',
+    preHTML: 'src/handlebars/fixtures/pageHeadPre.html',
+    template: 'src/handlebars/fixtures/pageHead.handlebars',
+    helpers: ['src/handlebars/helpers/edatehelper.js'],
+    templateData: 'src/handlebars/data/en/global.json',
+    output: 'dist/html/partials/en/pageHead.html',
   },
   pagefoot_en: {
-          preHTML: 'src/handlebars/fixtures/pageFootPre.html',
-          postHTML: 'src/handlebars/fixtures/pageFootPost.html',
-          template: 'src/handlebars/fixtures/pageFoot.handlebars',
-          templateData: 'src/handlebars/data/en/global.json',
-          output: 'dist/html/temp/en/pageFoot.html',
+    preHTML: 'src/handlebars/fixtures/pageFootPre.html',
+    postHTML: 'src/handlebars/fixtures/pageFootPost.html',
+    template: 'src/handlebars/fixtures/pageFoot.handlebars',
+    templateData: 'src/handlebars/data/en/global.json',
+    output: 'dist/html/partials/en/pageFoot.html',
   },
   homepage_en: {
-           preHTML: 'dist/html/temp/en/pageHead.html',
-           postHTML: 'dist/html/temp/en/pageFoot.html',
-           template : 'src/handlebars/fixtures/homePage.handlebars',
-           templateData: 'src/handlebars/data/en/homePage.json',
-           output: 'dist/html/en/homepage.html',
-           globals: [
-              'src/handlebars/data/en/global.json',
-           ]
+    preHTML: 'dist/html/partials/en/pageHead.html',
+    postHTML: 'dist/html/partials/en/pageFoot.html',
+    template : 'src/handlebars/fixtures/homePage.handlebars',
+    templateData: 'src/handlebars/data/en/homePage.json',
+    output: 'dist/html/en/homepage.html',
+    globals: [
+    'src/handlebars/data/en/global.json',
+    ]
   },
   pagehead_sv: {
-          preHTML: 'src/handlebars/fixtures/pageHeadPre.html',
-          template: 'src/handlebars/fixtures/pageHead.handlebars',
-          templateData: 'src/handlebars/data/sv/global.json',
-          output: 'dist/html/temp/sv/pageHead.html',
+    preHTML: 'src/handlebars/fixtures/pageHeadPre.html',
+    template: 'src/handlebars/fixtures/pageHead.handlebars',
+    helpers: ['src/handlebars/helpers/edatehelper.js'],
+    templateData: 'src/handlebars/data/sv/global.json',
+    output: 'dist/html/partials/sv/pageHead.html',
   },
   pagefoot_sv: {
-          preHTML: 'src/handlebars/fixtures/pageFootPre.html',
-          postHTML: 'src/handlebars/fixtures/pageFootPost.html',
-          template: 'src/handlebars/fixtures/pageFoot.handlebars',
-          templateData: 'src/handlebars/data/sv/global.json',
-          output: 'dist/html/temp/sv/pageFoot.html',
+    preHTML: 'src/handlebars/fixtures/pageFootPre.html',
+    postHTML: 'src/handlebars/fixtures/pageFootPost.html',
+    template: 'src/handlebars/fixtures/pageFoot.handlebars',
+    templateData: 'src/handlebars/data/sv/global.json',
+    output: 'dist/html/partials/sv/pageFoot.html',
   },
   homepage_sv: {
-           preHTML: 'dist/html/temp/sv/pageHead.html',
-           postHTML: 'dist/html/temp/sv/pageFoot.html',
-           template : 'src/handlebars/fixtures/homePage.handlebars',
-           templateData: 'src/handlebars/data/sv/homePage.json',
-           output: 'dist/html/sv/homepage.html',
-           globals: [
-              'src/handlebars/data/sv/global.json',
-           ]
+    preHTML: 'dist/html/partials/sv/pageHead.html',
+    postHTML: 'dist/html/partials/sv/pageFoot.html',
+    template : 'src/handlebars/fixtures/homePage.handlebars',
+    templateData: 'src/handlebars/data/sv/homePage.json',
+    output: 'dist/html/sv/homepage.html',
+    globals: [
+    'src/handlebars/data/sv/global.json',
+    ]
   },
-  pagehead_no: {
-          preHTML: 'src/handlebars/fixtures/pageHeadPre.html',
-          template: 'src/handlebars/fixtures/pageHead.handlebars',
-          templateData: 'src/handlebars/data/no/global.json',
-          output: 'dist/html/temp/no/pageHead.html',
+
+  examples_pagehead_en: {
+    template: 'src/handlebars/fixtures/examples/pageHead.handlebars',
+    templateData: 'src/handlebars/data/en/global.json',
+    output: 'dist/html/partials/en/examples/pageHead.html',
+    helpers: ['src/handlebars/helpers/edatehelper.js'],
   },
-  pagefoot_no: {
-          preHTML: 'src/handlebars/fixtures/pageFootPre.html',
-          postHTML: 'src/handlebars/fixtures/pageFootPost.html',
-          template: 'src/handlebars/fixtures/pageFoot.handlebars',
-          templateData: 'src/handlebars/data/no/global.json',
-          output: 'dist/html/temp/no/pageFoot.html',
+  examples_pagefoot_en: {
+    template: 'src/handlebars/fixtures/examples/pageFoot.handlebars',
+    templateData: 'src/handlebars/data/en/global.json',
+    output: 'dist/html/partials/en/examples/pageFoot.html',
   },
-  countrypage_no: {
-           preHTML: 'dist/html/temp/no/pageHead.html',
-           postHTML: 'dist/html/temp/no/pageFoot.html',
-           template : 'src/handlebars/fixtures/countryPage.handlebars',
-           templateData: 'src/handlebars/data/no/countryPage.json',
-           output: 'dist/html/no/homepage.html',
-           globals: [
-              'src/handlebars/data/no/global.json',
-           ]
+  examples_gridpage_en: {
+    preHTML: 'dist/html/partials/en/examples/pageHead.html',
+    postHTML: 'dist/html/partials/en/examples/pageFoot.html',
+    template : 'src/handlebars/fixtures/examples/gridPage.handlebars',
+    templateData: 'src/handlebars/data/en/examples/gridPage.json',
+    output: 'dist/html/en/examples/grid.html',
+    globals: [
+    'src/handlebars/data/en/global.json',
+    ]
   },
-  pagehead_fi: {
-          preHTML: 'src/handlebars/fixtures/pageHeadPre.html',
-          template: 'src/handlebars/fixtures/pageHead.handlebars',
-          templateData: 'src/handlebars/data/fi/global.json',
-          output: 'dist/html/temp/fi/pageHead.html',
+  examples_formpage_en: {
+    preHTML: 'dist/html/partials/en/examples/pageHead.html',
+    postHTML: 'dist/html/partials/en/examples/pageFoot.html',
+    template : 'src/handlebars/fixtures/examples/formPage.handlebars',
+    templateData: 'src/handlebars/data/en/examples/formPage.json',
+    output: 'dist/html/en/examples/form.html',
+    globals: [
+    'src/handlebars/data/en/global.json'
+    ]
   },
-  pagefoot_fi: {
-          preHTML: 'src/handlebars/fixtures/pageFootPre.html',
-          postHTML: 'src/handlebars/fixtures/pageFootPost.html',
-          template: 'src/handlebars/fixtures/pageFoot.handlebars',
-          templateData: 'src/handlebars/data/fi/global.json',
-          output: 'dist/html/temp/fi/pageFoot.html',
+  examples_iconspage_en: {
+    preHTML: 'dist/html/partials/en/examples/pageHead.html',
+    postHTML: 'dist/html/partials/en/examples/pageFoot.html',
+    template : 'src/handlebars/fixtures/examples/iconsPage.handlebars',
+    templateData: 'src/handlebars/data/en/examples/iconsPage.json',
+    output: 'dist/html/en/examples/icons.html',
+    globals: [
+    'src/handlebars/data/en/global.json',
+    ]
   },
-  countrypage_fi: {
-           preHTML: 'dist/html/temp/fi/pageHead.html',
-           postHTML: 'dist/html/temp/fi/pageFoot.html',
-           template : 'src/handlebars/fixtures/countryPage.handlebars',
-           templateData: 'src/handlebars/data/fi/countryPage.json',
-           output: 'dist/html/fi/homepage.html',
-           globals: [
-              'src/handlebars/data/fi/global.json',
-           ]
+  examples_imagespage_en: {
+    preHTML: 'dist/html/partials/en/examples/pageHead.html',
+    postHTML: 'dist/html/partials/en/examples/pageFoot.html',
+    template : 'src/handlebars/fixtures/examples/imagesPage.handlebars',
+    templateData: 'src/handlebars/data/en/examples/imagesPage.json',
+    output: 'dist/html/en/examples/images.html',
+    globals: [
+    'src/handlebars/data/en/global.json',
+    ]
+  },
+  examples_widgetspage_en: {
+    preHTML: 'dist/html/partials/en/examples/pageHead.html',
+    postHTML: 'dist/html/partials/en/examples/pageFoot.html',
+    template : 'src/handlebars/fixtures/examples/widgetsPage.handlebars',
+    templateData: 'src/handlebars/data/en/examples/widgetsPage.json',
+    output: 'dist/html/en/examples/widgets.html',
+    globals: [
+    'src/handlebars/data/en/global.json',
+    ]
+  },
+  examples_elementspage_en: {
+    preHTML: 'dist/html/partials/en/examples/pageHead.html',
+    postHTML: 'dist/html/partials/en/examples/pageFoot.html',
+    template : 'src/handlebars/fixtures/examples/elementsPage.handlebars',
+    templateData: 'src/handlebars/data/en/examples/elementsPage.json',
+    output: 'dist/html/en/examples/elements.html',
+    globals: [
+    'src/handlebars/data/en/global.json',
+    ]
+  },
+  examples_metricspage_en: {
+    preHTML: 'dist/html/partials/en/examples/pageHead.html',
+    postHTML: 'dist/html/partials/en/examples/pageFoot.html',
+    template : 'src/handlebars/fixtures/examples/metricsPage.handlebars',
+    templateData: 'src/handlebars/data/en/examples/metricsPage.json',
+    output: 'dist/html/en/examples/metrics.html',
+    globals: [
+    'src/handlebars/data/en/global.json',
+    ]
+  },
+  examples_sectionspage_en: {
+    preHTML: 'dist/html/partials/en/examples/pageHead.html',
+    postHTML: 'dist/html/partials/en/examples/pageFoot.html',
+    template : 'src/handlebars/fixtures/examples/sectionsPage.handlebars',
+    templateData: 'src/handlebars/data/en/examples/sectionsPage.json',
+    output: 'dist/html/en/examples/sections.html',
+    globals: [
+    'src/handlebars/data/en/global.json',
+    ]
   }
-}
+};

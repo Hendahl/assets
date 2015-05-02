@@ -1,0 +1,15 @@
+<section class="eOW">
+	<div class="eIW">
+		<div class="eRow">
+			<h1>{{header}}</h1>
+			<p>{{text1}}</p>
+		</div>
+	</div>
+</section>
+{{#each sections}}
+
+<section class="{{class}}" id="section_{{@index}}" data-ajaxsource="{{ajaxsource}}">
+	<h1>{{header}}</h1>
+	<p>{{text1}}</p>
+</section>
+{{/each}}

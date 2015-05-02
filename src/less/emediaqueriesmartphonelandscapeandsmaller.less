@@ -1,46 +1,107 @@
-/**
+/*
  * @author  Lars Hendahl
  */
- 
-@media only screen and (max-width: 480px) {
 
 
-	h1:after {
-    content: "Smart phone landscape and smaller";
-    }
+ @media only screen and (max-width: 480px){
+ 	#eMQ:after{
+ 		content:"Smart phone landscape and smaller";
+ 	}
 
-	html { font-size: @eBaseFontSizeSmartphonelandscapeandsmaller}
-	/* GRID ***************************************************************/
+ 	html{
+ 		font-size:@eBaseFontSizeSmartphonelandscapeandsmaller;
+ 	}
+ 	/* GRID ***************************************************************/
 
-	
-	.eRow.eBreak{
-		.eGCol2{
-			.eMixineGCol(6,5);
-			&.eGPush0, &.eGPush4, &.eGPush8 {
-				.eMixineGPush(0);
-				clear: left;
-			}
-			&.eGPush2, &.eGPush6, &.eGPush10 {
-				.eMixineGPush(6);
-				clear: none;
-			}
-		}
-		.eGCol3{
-		    .eMixineGCol(12,11);
-            &.eGPush0, &.eGPush6 {
-                 .eMixineGPush(0);
-                clear: left;
-            }
-            &.eGPush3, &.eGPush9 {
-                 .eMixineGPush(0);
-                 clear: left;
-            }
-		}
-        .eGCol4{
-           .eMixineGCol(12,11);
-	       .eMixineGPush(0);
-	       clear: left;
-	       float: none;
-        }
-	}
-}
+
+ 	.eRow.eBreak{
+ 		.eGCol2{
+ 			.eMixineGCol(6,5);
+ 			&.eGPush0,&.eGPush4,&.eGPush8{
+ 				clear:left;
+
+ 				.eMixineGPush(0);
+ 			}
+ 			&.eGPush2,&.eGPush6,&.eGPush10{
+ 				clear:none;
+
+ 				.eMixineGPush(6);
+ 			}
+ 		}
+ 		.eGCol3{
+ 			.eMixineGCol(12,11);
+ 			&.eGPush0,&.eGPush6{
+ 				clear:left;
+
+ 				.eMixineGPush(0);
+ 			}
+ 			&.eGPush3,&.eGPush9{
+ 				clear:left;
+
+ 				.eMixineGPush(0);
+ 			}
+ 		}
+ 		.eGCol4{
+ 			float:none;
+ 			clear:left;
+
+ 			.eMixineGCol(12,11);
+ 			.eMixineGPush(0);
+ 		}
+ 		.eActionLink{
+ 			clear:both !important;
+
+ 			width:100%;
+ 			margin-bottom:@eBaseGap;
+
+ 			.eMixineGPush(0)!important;
+ 		}
+ 	}
+ 	footer{
+ 		.eGCol2{
+ 			clear:both!important;
+
+ 			.eMixineGCol(12,11) !important;
+ 			.eMixineGPush(0)!important;
+ 		}
+ 	}
+ 	/* RESPONSIVE TABLES*****************************************************/
+ 	table.eTableResponsive{
+ 		table,
+ 		thead,
+ 		tbody,
+ 		th,
+ 		td,
+ 		tr {
+ 			display: block;
+ 		}
+ 		thead tr {
+ 			position: absolute;
+ 			top: -9999px;
+ 			left: -9999px;
+ 		}
+ 		tr { border: 1px solid @eBaseColorGrey4 }
+
+ 		td {
+ 			border: none;
+ 			border-bottom: 1px solid @eBaseColorGrey4;
+ 			position: relative;
+ 			padding-left: 50%;
+ 			white-space: normal;
+ 			text-align:left;
+ 		}
+ 		td:before {
+ 			content: attr(data-title);
+ 			background: @eBaseColorGrey3;
+ 			border-right: 1px solid @eBaseColorGrey4;
+ 			left: 0;
+ 			overflow: hidden;
+ 			padding: 10px 0 10px 10px;
+ 			position: absolute;
+ 			text-align: left;
+ 			top: 0;
+ 			white-space: inherit;
+ 			width: 42%;
+ 		}
+ 	}
+ }

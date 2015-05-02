@@ -1,48 +1,58 @@
-/**
+/*
  * @author  Lars Hendahl
  */
- 
 
-/* URL ***********************************************/
+ /* URL ***********************************************/
 
-@eBaseImageUrl: ~"../images/";
-@eBaseSpritesUrl: ~"../images/sprites/";
-@eBaseFontsUrl: ~"../fonts/";
+ @eBaseImageUrl: ~"../images/";
+ @eBaseSpritesUrl: ~"../images/sprites/";
+ @eBaseFontsUrl: ~"../fonts/";
 
-/* GRID ***************************************************************/
-@eColumnWidth: 80px;
-@eGutterWidth: 20px;
-@eNumberOfColumns: 12;
-@eAllColumnsWidth: @eColumnWidth * @eNumberOfColumns; 
-@eAllGuttersWidth: @eGutterWidth * (@eNumberOfColumns - 1); 
-@eTotalWidth: (@eAllColumnsWidth + @eAllGuttersWidth); 
+ /* GRID ***************************************************************/
+ @eColumnWidth: 80px;
+ @eGutterWidth: 20px;
+ @eNumberOfColumns: 12;
+ @eAllColumnsWidth: @eColumnWidth * @eNumberOfColumns;
+ @eAllGuttersWidth: @eGutterWidth * (@eNumberOfColumns - 1);
+ @eTotalWidth: (@eAllColumnsWidth + @eAllGuttersWidth);
 
 
-/* CONTAINERS **********************************************************/
+ /* CONTAINERS **********************************************************/
 
-@eMainInnerMaxWidth: (@eTotalWidth + 20); //1180px 10x2 is wrapper padding 
- 
+@eMainInnerMaxWidth: (@eTotalWidth + 20); //1180px 10x2 is wrapper padding
+
 /* GAPS ***************************************************************/
- 
+
 @eBaseGap: 1rem;
 
 /* FONT ***************************************************************/
 
 @font-face {
-    font-family: 'Afton_James';
-    src: url('@{eBaseFontsUrl}Afton_James.eot');
-    src: url('@{eBaseFontsUrl}Afton_James.eot?#iefix') format('embedded-opentype'),
-         url('@{eBaseFontsUrl}Afton_James.woff') format('woff'),
-         url('@{eBaseFontsUrl}Afton_James.ttf') format('truetype'),
-         url('@{eBaseFontsUrl}Afton_James.svg#eAvtal_capital_ttregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
- 
+	font-family: 'Proxima Nova';
+	src: url('@{eBaseFontsUrl}mark_simonson_-_proxima_nova_regular-webfont.eot');
+	src: url('@{eBaseFontsUrl}mark_simonson_-_proxima_nova_regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('@{eBaseFontsUrl}mark_simonson_-_proxima_nova_regular-webfont.woff') format('woff'),
+	url('@{eBaseFontsUrl}mark_simonson_-_proxima_nova_regular-webfont.ttf') format('truetype'),
+	url('@{eBaseFontsUrl}mark_simonson_-_proxima_nova_regular-webfont.svg#proxima_nova_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 
- 
-@eBaseFont1: "Open Sans",Helvetica,Arial,sans-serif;
-@eBaseFont2: 'Afton_James', Arial,sans-serif;
+}
+@font-face {
+	font-family: 'Proxima Nova Extra bold';
+	src: url('@{eBaseFontsUrl}mark_simonson_-_proxima_nova_extrabold-webfont.eot');
+	src: url('@{eBaseFontsUrl}mark_simonson_-_proxima_nova_extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('@{eBaseFontsUrl}mark_simonson_-_proxima_nova_extrabold-webfont.woff') format('woff'),
+	url('@{eBaseFontsUrl}mark_simonson_-_proxima_nova_extrabold-webfont.ttf') format('truetype'),
+	url('@{eBaseFontsUrl}mark_simonson_-_proxima_nova_extrabold-webfont.svg#proxima_nova_extraboldar') format('svg');
+	font-weight: bold;
+	font-style: normal;
+
+}
+
+@eBaseFont1: "Proxima Nova",Helvetica,Arial,sans-serif;
+@eBaseFont2: "Open Sans" , Arial,sans-serif;
+@eBaseFont3: "Proxima Nova Extra bold",Helvetica,Arial,sans-serif;
 
 @eBaseFontSizeDesktop:16px;
 @eBaseFontSizeTabletlandscape:15px;
@@ -70,14 +80,14 @@
 /* FLOATING WIDTHS **************************************************************/
 
 @eWidth12 : 12.50%;
-@eWidth14 : 14.28%; 
+@eWidth14 : 14.28%;
 @eWidth16 : 16.66%;
-@eWidth20 : 20%; 
+@eWidth20 : 20%;
 @eWidth25 : 25%;
 @eWidth33 : 33.33%;
 @eWidth40 : 40%;
 @eWidth50 : 50%;
-@eWidth55 : 55%; 
+@eWidth55 : 55%;
 @eWidth60  : 60%;
 @eWidth100 : 100%;
 

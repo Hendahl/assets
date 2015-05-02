@@ -1,0 +1,244 @@
+/*
+ * @author  Lars Hendahl
+ */
+
+
+ @import "evariables";
+ @import "emixins";
+
+
+ /* ACCORDION */
+ .eAccordion li{
+ 	background:@eBaseColorGrey1;
+ }
+ .eAccordion li.eOpen{
+ 	background:@eBaseColorWhite1;
+ }
+ .eAccordion .eToggler{
+ 	color:@eBaseColorBlue1;
+ }
+
+ /* Icons */
+ .eDemoIcons{
+ 	[class^="eIcon"]{
+ 		padding-left: @eBaseGap*8;
+ 		min-height: @eBaseGap*4;
+ 		line-height: @eBaseGap*2;
+ 	}
+ 	.eIcon-logo_eng, .eIcon-logo_svg{
+ 		padding-left: @eBaseGap*18;
+ 	}
+ }
+
+ /* TABS*/
+ .eTabs li{
+ 	float:left;
+ 	padding: 0 2%;
+ }
+ .eTabPane .eRow{
+ 	display:block;
+ 	border:2px solid @eBaseColorGrey4;
+ }
+ .eMain{
+ 	min-height: 10px;
+ }
+ .eNewsArticlePage .eMain .eMainArticle.eBox {
+ 	width: 65.65%;
+ 	background: none repeat scroll 0% 0% @eBaseColorWhite1;
+ 	border:1px solid @eBaseColorRed1;
+ }
+ img{
+ 	max-width: 100%;
+ 	height: auto;
+ 	width: 100%;
+ }
+ .eGlobalMenu li {
+ 	margin: 20px 10px 0 ;
+ 	height: auto ;
+ 	display:inline-block;
+ }
+
+ h2 a{
+ 	padding: @eBaseGap*2 0;
+ 	float: left;
+ }
+
+ nav p a {
+ 	margin: 10px;
+ }
+
+ pre {
+ 	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+ 	DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+ 	serif;
+ 	overflow: auto;
+ 	width: auto;
+ 	padding: 5px;
+ 	padding-bottom: 20px!ie7;
+ 	max-height: 600px;
+ 	white-space: normal;
+ }
+ .eDemoCode {
+ 	background:@eBaseColorBlack1;
+ 	color:@eBaseColorBlue1;
+ 	font-size: 14px;
+ }
+
+ table.eTableCode {
+ 	width: 100%;
+ }
+
+ .eCol {
+ 	width: 49%;
+ }
+
+ .el {
+ 	color:@eBaseColorGreen1;
+ }
+
+ .class {
+ 	color: orange;
+ }
+
+ .insert {
+ 	margin-left: 10px;
+ }
+ .insertx2 {
+ 	margin-left: 20px;
+ }
+ .insertx3 {
+ 	margin-left: 30px;
+ }
+ .insertx4 {
+ 	margin-left: 40px;
+ }
+ .insertx5 {
+ 	margin-left: 50px;
+ }
+
+ .eGrid.eOW {
+ 	background:@eBaseColorGrey3;
+ }
+ .eGrid h2 {
+ 	.eMixinFont(1, 1.18);
+ }
+
+ .eGrid .eIW {
+ 	background:@eBaseColorGrey4;
+ }
+
+ .eGrid .eRow.eMt {
+ 	background:@eBaseColorGrey1;
+ }
+
+ .eGrid [class^="eGCol"],.eGrid [class*=" eGCol"] {
+ 	background:@eBaseColorGrey2;
+ 	min-height: 80px;
+ 	line-height: 80px;
+ 	text-align: center;
+ 	margin-top: 5px;
+ 	margin-bottom: 5px;
+ }
+
+ .eGrid [class^="eGCol"] [class^="eGCol"] ,.eGrid [class*=" eGCol"] [class*=" eGCol"] {
+ 	background:@eBaseColorGrey1;
+ 	min-height: 80px;
+ 	line-height: 80px;
+ 	text-align: center;
+ 	margin-top: 0px;
+ 	margin-bottom: 0px;
+ }
+
+ #eBreakpoints {
+ 	color:@eBaseColorGreen1;
+ 	text-align: right;
+ 	position: absolute;
+ 	right: 1rem;
+ 	top: 2.5rem;
+ 	background: BEIGE;
+ 	padding: 1rem;
+
+ }
+
+ #eBreakpoints:after {
+ 	content: " max-width 1200px ";
+ }
+ .media320, .media480, .media768,  .media1024{
+ 	background-color:@eBaseColorWhite1;
+ }
+ .media1200{
+ 	background-color:@eBaseColorOrange1 ;
+ }
+ @media only screen and (max-width: 1024px) and (min-width: 769px) {
+ 	#eBreakpoints {
+ 		color: orange;
+ 	}
+ 	#eBreakpoints:after {
+ 		content:
+ 		"  1024px tablet landscape (max-width: 1024px) and (min-width: 769px) ";
+ 	}
+ 	.media320,  .media480, .media768, .media1200{
+ 		background-color:@eBaseColorWhite1;
+ 	}
+ 	.media1024{
+ 		background-color:@eBaseColorOrange1 ;
+ 	}
+
+ }
+
+ @media only screen and (max-width: 768px) {
+ 	#eBreakpoints {
+ 		color:@eBaseColorGreen1;
+
+ 		background-size: 50px;
+ 	}
+ 	#eBreakpoints:after {
+ 		content: " 768px and smaller devices (max-width: 768px) ";
+ 	}
+ 	.media320px, .media480, .media1024, .media1200{
+ 		background-color:@eBaseColorWhite1;
+ 	}
+ 	.media768{
+ 		background-color:@eBaseColorOrange1 ;
+ 	}
+
+ 	.eDemoCode{
+ 		margin-bottom: @eBaseGap*2;
+ 		margin-top: @eBaseGap/2;
+ 	}
+ }
+
+ @media only screen and (max-width: 480px) {
+ 	#eBreakpoints {
+ 		color: orange;
+ 		background-size: 80px;
+ 	}
+ 	#eBreakpoints:after {
+ 		content: " max-width: 480px ";
+ 	}
+ 	.media480px{
+ 		background-color:@eBaseColorOrange1 ;
+ 	}
+ 	.media320px, .media768, .media1024, .media1200{
+ 		background-color:@eBaseColorWhite1;
+ 	}
+ 	.eNewsArticlePage .eMainArticle ul {
+ 		margin-left: 0;
+ 	}
+ }
+
+ @media only screen and (max-width : 320px) {
+ 	#eBreakpoints {
+ 		color:@eBaseColorGreen1;
+ 	}
+ 	#eBreakpoints:after {
+ 		content: " 320px smartphone portrait mode  (max-width : 320px) ";
+ 	}
+ 	.media320{
+ 		background-color:@eBaseColorOrange1 ;
+ 	}
+ 	.media480, .media768, .media1024, .media1200{
+ 		background-color:@eBaseColorWhite1;
+ 	}
+
+ }
