@@ -6,11 +6,11 @@ Frontend code for Project x  1.0.
 * NodeJS https://nodejs.org/
 * Grunt http://gruntjs.com/
 * From ../assets  in terminal/console
-* run Npm install
-* run Grunt
+* run npm install
+* run grunt
 
 ## Build
-A dist folder will be build/updated under Project x . Open up dist/index.html
+A dist folder will be build/updated under ../assets/dist . Open up dist/index.html
 
 ## Tasks
 See Gruntfile.js for tasks and alias
