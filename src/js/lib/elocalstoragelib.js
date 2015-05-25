@@ -19,7 +19,7 @@
 
  	ls.getItem = function (key) {
  		if (ls.isAvailable) {
- 			return lStorage.getItem("ericsson-" + key);
+ 			return lStorage.getItem("NAME-" + key);
  		}
  	};
 
@@ -31,13 +31,13 @@
 
  	ls.setItem = function (key, value) {
  		if (ls.isAvailable) {
- 			return lStorage.setItem("ericsson-" + key, value);
+ 			return lStorage.setItem("NAME-" + key, value);
  		}
  	};
 
  	ls.removeItem = function (key) {
  		if (ls.isAvailable) {
- 			return lStorage.removeItem("ericsson-" + key);
+ 			return lStorage.removeItem("NAME-" + key);
  		}
  	};
 
